@@ -1,0 +1,72 @@
+
+.container{
+    justify-content: center;
+    display: flex;
+
+}
+.cls-1 {
+    clip-path: url(#clip-Web_1920_3);
+  }
+
+  .cls-2, .cls-3 {
+    fill: #003f7e;
+  }
+
+  .cls-4, .cls-8 {
+    fill: #f9f9fa;
+  }
+
+  .cls-4, .cls-6 {
+    font-size: 40px;
+    font-family: Calibri;
+  }
+
+  .cls-5 {
+    fill: #f7fafd;
+  }
+
+  .cls-6, .cls-7 {
+    fill: #384048;
+  }
+
+  .cls-9 {
+    fill: #015bb3;
+  }
+
+  .cls-10 {
+    fill: #63656a;
+  }
+
+  .cls-11, .cls-17 {
+    fill: #fafaef;
+  }
+
+  .cls-12, .cls-13 {
+    fill: #716f01;
+  }
+
+  .cls-12 {
+    font-size: 50px;
+  }
+
+  .cls-12, .cls-14 {
+    font-family: Calibri-Bold, Calibri;
+    font-weight: 700;
+  }
+
+  .cls-14 {
+    fill: #fdf8f8;
+    font-size: 35px;
+  }
+
+  .cls-15, .cls-16, .cls-17 {
+    stroke: none;
+  }
+
+  .cls-16 {
+    fill: #707070;
+  }
+
+  .cls-18 {
+    fill: #fff;
+  }

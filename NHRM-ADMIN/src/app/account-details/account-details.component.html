@@ -1,0 +1,78 @@
+<div class="container1">          
+
+
+  <main>
+     
+      <article>
+
+        <div class="text-center"> 
+            
+
+    
+                <div class="wrapper">
+                    <h2 class ="h2">Account Details
+                        <button mat-button (click)="showMe()">
+                          <mat-icon id="test">{{icon}}</mat-icon>
+                        </button>
+                    </h2>
+                <form [formGroup]="form" *ngIf="this.isDisplayed" class='form' #staffForm='ngForm' (ngSubmit)="editStaff(staffForm.form);">
+                  
+                  <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" formControlName="email" value="{{data.email}}" name="email">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="fname" class="col-sm-2 col-form-label">First Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" formControlName="firstName" id="fname" value="{{data.firstName}}" name="firstName">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="sname" class="col-sm-2 col-form-label">Surname:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" formControlName="surname" id="sname" value="{{data.surname}}" name="surName">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="role" class="col-sm-2 col-form-label">Staff Role:</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" formControlName="roleId" id ="role" name="roleId">
+                        <option [ngValue]=1>Admin</option>
+                        <option [ngValue]=2>Clinician</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="email" placeholder="Email" name="email" ngModel #emailField="ngModel" required>
+                    </div>
+                  </div> -->
+                  <input *ngIf="!isEditable" id="test" type='button' class="submit" value="Edit User" (click)="onClick()" />
+                  <input *ngIf="isEditable" type='submit' class="submit" value='Save User'/>
+                  </form>
+
+                  <form [formGroup]="form" *ngIf="this.isDisplayed" class='form' #staffPasswordForm='ngForm' (ngSubmit)="updatePassword(staffPasswordForm.form);">
+                    <div class="form-group row">
+                      <label for="password" class="col-sm-2 col-form-label">Password:</label>
+                      <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" placeholder="password" name="password" ngModel #passwordField="ngModel" required>
+                      </div>
+                    </div>
+
+                    <input type='submit' class="submit" value='Update Password' />
+                  </form>
+
+               <!--</div>--> 
+                </div>
+                
+
+        </div>
+          
+
+      </article>
+  </main>      
+</div>

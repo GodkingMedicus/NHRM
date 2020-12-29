@@ -1,0 +1,124 @@
+<div class = "container1">
+    <main>       
+      <button *ngIf="this.router.url == '/viewPatientMeasurements'" class="back" (click)="goBack()">Back to View Patient</button>
+        <article>
+            <h2>Measurements For: {{patient.urnumber}}  Name: {{patient.firstName}} {{patient.surName}}</h2> 
+            <!-- {{patient.hospitalNumber}}: {{patient.firstName}} {{patient.surName}} -->
+            <h2 class = 'tableheading'>ECOG</h2> 
+            <table class="table1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>ECOG Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of queryResults"> 
+                    <ng-container  *ngIf="item.measurementId == 1">
+                      <td>{{item.dateTimeRecorded}}</td>
+                      <td>{{item.value}}</td>
+                    </ng-container>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+              <h2 class = 'tableheading'>Breathlessness</h2> 
+              <table class="table1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Breathlessness</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of queryResults">
+                    <ng-container  *ngIf="item.measurementId == 2">
+                      <td>{{item.dateTimeRecorded}}</td>
+                      <td>{{item.value}}</td>
+                    </ng-container>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+              <h2 class = 'tableheading'>Level of Pain</h2> 
+              <table class="table1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Level of Pain</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of queryResults">
+                    <ng-container  *ngIf="item.measurementId == 3">
+                      <td>{{item.dateTimeRecorded}}</td>
+                      <td>{{item.value}}</td>
+                    </ng-container>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+              <h2 class = 'tableheading'>Fluid Drain</h2> 
+              <table class="table1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Fluid Drain</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of queryResults">
+                    <ng-container  *ngIf="item.measurementId == 4">
+                      <td>{{item.dateTimeRecorded}}</td>
+                      <td>{{item.value}}</td>
+                    </ng-container>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+              <h2 class = 'tableheading'>Quality of life</h2> 
+              <table class="table1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Quality of Life</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of queryResults">
+                    <ng-container  *ngIf="item.measurementId == 5">
+                      <td>{{item.dateTimeRecorded}}</td>
+                      <td>{{item.value}}</td>
+                    </ng-container>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+        </article>
+    </main>
+</div>

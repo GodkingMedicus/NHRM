@@ -1,0 +1,20 @@
+<form #addMeasurementForm='ngForm' (ngSubmit)="onSubmit(addMeasurementForm.form)">
+    
+    <div class="form-group row">
+      <div class="col-lg">
+        <label for="addMeasurement">Add Measurement</label>
+        <select class="form-control" id ="title required" name="title" ngModel #titleField="ngModel" required>
+          <option *ngFor="let meas of Measurements" [value]="Measurements">{{meas.measurementName}}</option>
+        </select>
+      </div>
+      <div class="col-lg">
+        <label for="measurementFrequency">Frequency</label>
+        <select class="form-control" id ="title required" name="title" ngModel #titleField="ngModel" required>
+          <option>Daily</option>
+          <option>Weekly</option>
+          <option>Monthly</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary pad">Add measurement</button>
+  </form>

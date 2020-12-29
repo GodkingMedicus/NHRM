@@ -1,0 +1,72 @@
+<div class="container1">          
+
+
+    <main>
+       
+        <article>
+  
+          <div class="text-center"> 
+              
+  
+      
+                  <div class="wrapper">
+                      <h2 class ="h2">Account Details
+                          <button mat-button (click)="showMe()">
+                            <mat-icon id="test">{{icon}}</mat-icon>
+                          </button>
+                      </h2>
+                  <form *ngIf="this.isDisplayed" class='form' #staffForm='ngForm' (ngSubmit)="addStaff(staffForm.form);">
+                    
+                    <div class="form-group row">
+                      <label for="staffID" class="col-sm-2 col-form-label">Staff Email</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email" placeholder="Email" name="email" ngModel #emailField="ngModel" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="fname" class="col-sm-2 col-form-label">First Name:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fname" placeholder="First Name" name="firstName" ngModel #firstNameField="ngModel" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="sname" class="col-sm-2 col-form-label">Surname:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="sname" placeholder="Surname" name="surname" ngModel #surnameNameField="ngModel" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="password" class="col-sm-2 col-form-label">Password:</label>
+                      <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" ngModel #passwordField="ngModel" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="role" class="col-sm-2 col-form-label">Staff Role:</label>
+                      <div class="col-sm-10">
+                        <select class="form-control" id ="role" name="roleID" ngModel #roleField="ngModel" required>
+                          <option [ngValue]=1>Admin</option>
+                          <option [ngValue]=2>Clinician</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" ngModel #emailField="ngModel" required>
+                      </div>
+                    </div> -->
+                    <input type='submit' class="submit" value='Add User' />
+                    </form>
+  
+                 <!--</div>--> 
+                  </div>
+                  
+  
+          </div>
+            
+  
+        </article>
+    </main>      
+  </div>
+  

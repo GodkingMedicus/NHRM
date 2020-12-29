@@ -1,0 +1,67 @@
+<div class="container1">      
+    <main>       
+      <article>
+  
+        <h3 *ngIf="!enableButton && !enableResults">Search for existing staff</h3>
+        <h3 *ngIf="enableResults">Search Results for {{searchValue.email}} {{searchValue.firstName}} {{searchValue.surname}}</h3>
+        <h3 *ngIf="enableButton">No Staff found for {{searchValue.email}} {{searchValue.firstName}} {{searchValue.surname}}</h3>
+        <div class="text-center margin">
+  
+          <form class="form-search" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.form)">
+            <div *ngIf="enableSearch">
+              <input id="email" (change)="inputSearch(1)" type="search" placeholder="Enter Email..." name="email" ngModel #emailField="ngModel"/>
+              <p>Or</p>
+              <input id="firstName" (change)="inputSearch(2)" type="search" placeholder="Enter staff First Name..." name="firstName" ngModel #firstNameField="ngModel"/>
+              <input id="surName"(change)="inputSearch(2)" type="search" placeholder="Enter staff Surname..." name="surname" ngModel #surnameField="ngModel"/>
+              <p>Only one text field is required for a search</p>
+              <button class="button" type="submit">Search</button><br>
+            </div>
+            <div *ngIf="enableButton">
+              <img src="../../assets/images/notFound.png"><br>
+              <h4>Staff not found!</h4>
+              <p>
+                We are unable to find this staff on our system.
+              </p>
+              <p>
+                If you'd like to add a new staff, please click the 'Add New Staff' button below
+                or try searching again.
+              </p>
+              <a [routerLink]="'/addStaff'" title="test">
+                <button class="button" type="submit">Add New Staff</button></a><br>
+              <button class="button" (click)="diffSearch()">Try a different search</button>
+            </div>
+          </form>
+  
+          <div *ngIf="enableResults" class="form-search">
+            <h4></h4>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of searchResults">
+                  <td>{{item.email}}</td>
+                  <td>{{item.firstName}}</td>
+                  <td>{{item.surname}}</td>
+                  <td><a [routerLink]="['/accountDetails']" (click)="passStaff(item)"><button class="button">View</button></a></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5">
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+  
+      </article>
+    </main>      
+  </div>
+  

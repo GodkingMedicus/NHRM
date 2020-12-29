@@ -1,0 +1,25 @@
+<div class="container">
+    <header>
+        <span class="n">Northern </span>
+        <span class="h">Health</span>
+    </header>
+
+    <p>Login</p><br>
+
+    <form class="inputs" #loginForm="ngForm" (ngSubmit)="login(loginForm.form);">
+
+        <input type="text" id="email" placeholder="E-mail" name="userId" ngModel #userIdField="ngModel" required>
+        <input type="password" id="password" placeholder="Password" name="password" ngModel #passwordField="ngModel"
+            required>
+
+        <button type="submit" class="submit-button" [disabled]="!loginForm.valid"
+            [ngClass]="{'disabled-btn': !loginForm.valid}">Login</button>
+    </form>
+
+    <div>
+        <div class="error" *ngIf="this.failed">
+            <p *ngIf="this.err != '401'">Something went wrong<br>Please try again</p>
+            <p *ngIf="this.err == '401'">Login Failed<br>Check UserId and/or Password</p>
+        </div>
+    </div>
+</div>

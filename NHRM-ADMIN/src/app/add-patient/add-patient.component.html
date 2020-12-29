@@ -1,0 +1,146 @@
+<div class="container1">          
+
+
+  <main>
+     
+      <article>
+
+        <div class="text-center"> 
+            
+
+    
+                <div class="wrapper">
+                  
+                <form class='form' #patientForm='ngForm' (ngSubmit)="addPatient(patientForm.form);">
+                  <h2 class ="h2">Demographic Information</h2>
+                  <div class="form-group row">
+                    <label for="urnumber" class="col-sm-2 col-form-label">UR Number</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="urnumber" placeholder="UR Number" name="urnumber" ngModel #urnumberField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="title" class="col-sm-2 col-form-label">Title</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" id ="title required" name="title" ngModel #titleField="ngModel" required>
+                        <option *ngFor="let title of titles" [value]="title">{{title}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="fname" class="col-sm-2 col-form-label">First Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="fname" placeholder="First Name" name="firstName" ngModel #firstNameField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="sname" class="col-sm-2 col-form-label">Surname:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="sname" placeholder="Surname" name="surName" ngModel #surnameNameField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="gender" class="col-sm-2 col-form-label">Gender:</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" id ="gender" name="gender" ngModel #genderField="ngModel" required>
+                        <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="DOB" class="col-sm-2 col-form-label">DOB:</label>
+                    <div class="col-sm-10">
+                      <mat-form-field class="col-sm-10">
+                        <input class="form-control" matInput [matDatepicker]="picker" name="dob" ngModel #dobNameField="ngModel" [ngModelOptions]="{timezone: 'UTC'}" required />
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>      
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="country" class="col-sm-2 col-form-label">Country of Birth:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="country" placeholder="Country of Birth" name="countryOfBirth" ngModel #countryField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="language" class="col-sm-2 col-form-label">Preferred Language:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="preferredLanguage" placeholder="Preferred Language" name="preferredLanguage" ngModel #preferredLanguageField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="language" class="col-sm-2 col-form-label">Mobile Number:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="mobile" placeholder="Mobile Number" name="mobileNumber" ngModel #mobileField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="language" class="col-sm-2 col-form-label">Home Number:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="home" placeholder="Home Number" name="homeNumber" ngModel #homeField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="email" placeholder="Email" name="email" ngModel #emailField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="address" class="col-sm-2 col-form-label">Address:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="address" placeholder="Address" name="address" ngModel #addressField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="suburb" class="col-sm-2 col-form-label">Suburb:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="suburb" placeholder="Suburb" name="suburb" ngModel #suburbField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="postcode" class="col-sm-2 col-form-label">Postcode:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="postcode" placeholder="Postcode" name="postcode" ngModel #postcodeField="ngModel" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="livesalone" class="col-sm-2 col-form-label">Lives Alone:</label>
+                    <div class="col-sm-10">
+                      <select id="living" class="select">
+                        <option>Yes</option>
+                        <option>No</option>
+                        </select>
+                    </div>
+                  </div>
+                  <!-- <h2 class ="h2">Measurements</h2>
+                  <label class="form-check-label label-pad" for="exampleCheck1">Indwelling Pleural Catheter Measurements</label>
+                  <div class="form-check pad">
+                    <input type="checkbox" class="form-check-input row" id="exampleCheck1">
+                  </div> -->
+                  <h2 class ="h2">Password</h2>
+                  <div class="form-group row">
+                    <button type="button" class="pwButton" (click)="generatePassword()">Generate Password</button>
+                    <label for="password" class="col-sm-2 col-form-label">Password:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="password" placeholder="Enter manually or generate using button above..." name="password" ngModel #passwordField="ngModel" required>
+                    </div>
+                  </div>
+
+                  <input type='submit' class="submit" value='Add patient' />
+
+                  
+                  </form>
+                  
+
+               <!--</div>--> 
+                </div>
+                
+
+        </div>
+          
+
+      </article>
+  </main>      
+</div>

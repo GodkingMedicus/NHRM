@@ -1,0 +1,154 @@
+.container1 {
+    display: flex;
+  
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  }
+  
+  .button{
+    margin-bottom: 5px;
+  }
+  
+  nav[role="navigation"] {
+    height: 100vh;
+    background-color: var(--nav-background);
+    flex: 1 0 16%;
+    text-align: center;
+  }
+  
+  .nav-items {
+    color: var(--light-text);
+    margin-top: 50px;
+  }
+  
+  .back{
+    background-color:red;
+    border-radius: 5px;
+  }
+  
+  a{
+          color: var(--light-text) !important;
+          margin-top: 50px !important;
+          text-decoration: none !important;
+  }
+  
+  .picture{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .margin{
+    margin-top:5rem;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    padding: 10px;
+  
+    cursor: pointer;
+  }
+  
+  
+  .container1 main {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .active-link, .nav-link:hover {
+  
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px; 
+  }
+  
+  /* .nav-link:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;    
+  
+  
+    transition: all 1s;
+  
+  } */
+  
+  /* .nav-link:hover:after {
+    width: 100%;
+  
+    background-color: var(--active-link);
+    color: var(--dark-text);
+  } */
+  
+  
+  .nav-link:hover {
+    background-color: var(--active-link);
+    color: var(--dark-text);
+  } 
+  
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .logo{
+        visibility: hidden;
+    }
+  }
+    .form-search{
+        margin: 0 auto;
+        text-align: center;
+    
+        font: bold 13px sans-serif;
+         max-width: 70%;
+        position: relative;
+    }
+    
+    .form-search input{
+        width: 60%;
+        box-sizing: border-box;
+        border-bottom-left-radius: 2px;
+        border-top-left-radius: 2px;
+        background-color:  #ffffff;
+        box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+        padding: 14px 15px 14px 40px;
+        border: 1px solid #b6c3cd;;
+        border-right: 0;
+        color:#4E565C;
+        outline: none;
+        -webkit-appearance: none;
+    }
+    
+    .form-search button{
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        background-color:  #6caee0;
+        box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+        color: #ffffff;
+        padding: 15px 22px;
+        margin-left: -4px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    
+    .form-search i{
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        font-size: 16px;
+        color: #80A3BD;
+    }
+  
+    .form-search p{
+      padding-top: 15px; 
+    }
+    
+    
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      .logo{
+          visibility: hidden;
+      }
+      }
+  
+    
+    
+    
+    
+  
